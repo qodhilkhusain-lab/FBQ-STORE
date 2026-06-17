@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Katalog HP - FBQ Store</title>
+  <link rel="stylesheet" href="/css/user.css">
+</head>
+<body data-page="catalog">
+  <div class="top-header">
+    <div class="container top-header-inner">
+      <span>📍 Kudus, Indonesia</span>
+      <span>☎ 8956-3907-1700</span>
+      <span>✉ fbqstore@email.com</span>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="container header-inner">
+      <a class="logo" href="/"><span>FBQ</span><strong>.</strong><small>Store</small></a>
+      <div class="header-search">
+        <select id="quickBrandFilter" aria-label="Filter merek cepat">
+          <option value="all">Semua Merek</option>
+          <option value="Apple">Apple</option>
+          <option value="Samsung">Samsung</option>
+          <option value="Xiaomi">Xiaomi</option>
+          <option value="OPPO">OPPO</option>
+          <option value="Vivo">Vivo</option>
+          <option value="Realme">Realme</option>
+        </select>
+        <input type="text" id="searchInput" placeholder="Cari handphone di stok toko...">
+        <button id="searchButton">Cari</button>
+      </div>
+      <div class="header-actions">
+        <a href="/checkout.html" class="header-link"><span class="header-icon cart-badge" id="cartBadge">0</span><small>Keranjang</small></a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="category-nav" id="navLinks">
+    <div class="container nav-inner">
+      <a href="/">Beranda</a>
+      <a href="/katalog.html" class="active">Katalog HP</a>
+      <a href="/promo.html">Promo Toko</a>
+      <a href="/checkout.html">Checkout</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-banner">
+      <div class="container page-banner-inner">
+        <div>
+          <p class="eyebrow">Katalog handphone</p>
+          <h1>Daftar produk dari stok FBQ Store.</h1>
+          <p>Pilih handphone sesuai merek, kondisi, harga, dan spesifikasi yang tersedia di toko.</p>
+        </div>
+        <img src="/img/phone-stock.svg" alt="Ilustrasi katalog handphone">
+      </div>
+    </section>
+
+    <section class="shop-categories">
+      <div class="container category-grid">
+        <article class="shop-card red-card">
+          <div>
+            <h3>HP Baru</h3>
+            <a href="/katalog.html?condition=Baru">Belanja sekarang →</a>
+          </div>
+          <img src="/img/phone-new.svg" alt="Kategori HP baru">
+        </article>
+        <article class="shop-card dark-card">
+          <div>
+            <h3>HP Bekas Bergaransi</h3>
+            <a href="/katalog.html?condition=Bekas">Belanja sekarang →</a>
+          </div>
+          <img src="/img/phone-used.svg" alt="Kategori HP bekas">
+        </article>
+        <article class="shop-card black-card">
+          <div>
+            <h3>Stok Toko Pribadi</h3>
+            <a href="/katalog.html">Lihat stok →</a>
+          </div>
+          <img src="/img/phone-stock.svg" alt="Stok toko pribadi">
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Katalog Handphone</h2>
+            <p>Semua produk berasal dari stok FBQ Store.</p>
+          </div>
+          <div class="mini-stats">
+            <span><strong id="productCount">0</strong> produk</span>
+            <span><strong id="stockCount">0</strong> stok</span>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <select id="brandFilter">
+            <option value="all">Semua merek</option>
+            <option value="Apple">Apple</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Xiaomi">Xiaomi</option>
+            <option value="OPPO">OPPO</option>
+            <option value="Vivo">Vivo</option>
+            <option value="Realme">Realme</option>
+          </select>
+          <select id="conditionFilter">
+            <option value="all">Semua kondisi</option>
+            <option value="Baru">Baru</option>
+            <option value="Bekas">Bekas</option>
+          </select>
+          <select id="sortFilter">
+            <option value="">Urutkan harga</option>
+            <option value="low">Harga termurah</option>
+            <option value="high">Harga termahal</option>
+          </select>
+          <button class="btn btn-light" id="resetFilter">Reset Filter</button>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><h3>FBQ<span>.</span></h3><p>Katalog handphone toko pribadi.</p></div>
+      <div><h4>Menu</h4><a href="/">Beranda</a><a href="/promo.html">Promo</a><a href="/checkout.html">Checkout</a></div>
+      <div><h4>Catatan</h4><p>Tambahkan produk ke keranjang lalu lanjut ke checkout.</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 FBQ Store.</div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

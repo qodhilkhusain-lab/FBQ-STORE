@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - FBQ Store</title>
+  <link rel="stylesheet" href="/css/user.css">
+</head>
+<body data-page="checkout">
+  <div class="top-header">
+    <div class="container top-header-inner">
+      <span>📍 Kudus, Indonesia</span>
+      <span>☎ 8956-3907-1700</span>
+      <span>✉ fbqstore@email.com</span>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="container header-inner">
+      <a class="logo" href="/"><span>FBQ</span><strong>.</strong><small>Store</small></a>
+      <div class="header-search">
+        <select id="quickBrandFilter" aria-label="Filter merek cepat">
+          <option value="all">Semua Merek</option>
+          <option value="Apple">Apple</option>
+          <option value="Samsung">Samsung</option>
+          <option value="Xiaomi">Xiaomi</option>
+          <option value="OPPO">OPPO</option>
+          <option value="Vivo">Vivo</option>
+          <option value="Realme">Realme</option>
+        </select>
+        <input type="text" id="searchInput" placeholder="Cari produk sebelum checkout...">
+        <button id="searchButton">Cari</button>
+      </div>
+      <div class="header-actions">
+        <a href="/checkout.html" class="header-link"><span class="header-icon cart-badge" id="cartBadge">0</span><small>Keranjang</small></a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="category-nav" id="navLinks">
+    <div class="container nav-inner">
+      <a href="/">Beranda</a>
+      <a href="/katalog.html">Katalog HP</a>
+      <a href="/promo.html">Promo Toko</a>
+      <a href="/checkout.html" class="active">Checkout</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-banner checkout-banner">
+      <div class="container page-banner-inner">
+        <div>
+          <p class="eyebrow">Checkout pesanan</p>
+          <h1>Lengkapi data customer untuk menyimpan transaksi.</h1>
+          <p>Data pembeli tersimpan di panel admin khusus, bukan ditampilkan di homepage.</p>
+        </div>
+        <img src="/img/phone-hero.svg" alt="Ilustrasi checkout handphone">
+      </div>
+    </section>
+
+    <section class="section checkout-section" id="checkout">
+      <div class="container checkout-grid">
+        <div>
+          <div class="section-title compact-title">
+            <div>
+              <h2>Keranjang Belanja</h2>
+              <p>Periksa produk sebelum checkout.</p>
+            </div>
+          </div>
+          <div class="cart-card">
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-total">
+              <span>Total Pesanan</span>
+              <strong id="cartTotal">Rp0</strong>
+            </div>
+            <button class="btn btn-light full-btn" id="clearCart">Kosongkan Keranjang</button>
+            <a class="btn btn-outline full-btn cart-back-link" href="/katalog.html">Tambah Produk Lagi</a>
+          </div>
+        </div>
+
+        <form class="checkout-form" id="checkoutForm">
+          <h2>Form Checkout</h2>
+          <p>Nama customer dan transaksi akan muncul pada panel admin khusus.</p>
+          <label>Nama customer / pembeli
+            <input type="text" name="customerName" required placeholder="Nama lengkap customer">
+          </label>
+          <label>No. WhatsApp
+            <input type="tel" name="phoneNumber" required placeholder="08xxxxxxxxxx">
+          </label>
+          <label>Alamat pengiriman
+            <textarea name="address" rows="4" required placeholder="Alamat lengkap"></textarea>
+          </label>
+          <label>Metode pembayaran
+            <select name="paymentMethod" required>
+              <option value="">Pilih pembayaran</option>
+              <option value="Transfer Bank">Transfer Bank</option>
+              <option value="COD">COD</option>
+              <option value="E-Wallet">E-Wallet</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn-primary full-btn">Checkout Sekarang</button>
+          <p class="form-message" id="checkoutMessage"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><h3>FBQ<span>.</span></h3><p>Checkout pembelian handphone.</p></div>
+      <div><h4>Menu</h4><a href="/">Beranda</a><a href="/katalog.html">Katalog</a></div>
+      <div><h4>Catatan</h4><p>Data customer dan transaksi masuk ke panel admin khusus.</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 FBQ Store.</div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

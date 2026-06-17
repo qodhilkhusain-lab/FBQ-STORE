@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fff7ce"/><stop offset="1" stop-color="#ffc915"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#15161d" flood-opacity=".22"/></filter>
+  </defs>
+  <rect width="420" height="420" rx="34" fill="#fff"/>
+  <circle cx="320" cy="90" r="80" fill="#ffc915" opacity=".12"/>
+  <circle cx="90" cy="330" r="92" fill="#ffc915" opacity=".1"/>
+  <g filter="url(#shadow)">
+    <rect x="137" y="38" width="168" height="330" rx="32" fill="#1d1c12"/>
+    <rect x="151" y="60" width="140" height="286" rx="22" fill="url(#g)"/>
+    <rect x="190" y="48" width="62" height="8" rx="4" fill="#1e1f29" opacity=".45"/>
+    <circle cx="221" cy="333" r="10" fill="#fff" opacity=".7"/>
+    <rect x="168" y="92" width="106" height="14" rx="7" fill="#fff" opacity=".75"/>
+    <rect x="168" y="118" width="76" height="10" rx="5" fill="#fff" opacity=".45"/>
+    <rect x="168" y="258" width="106" height="36" rx="18" fill="#fff" opacity=".85"/>
+    <circle cx="263" cy="80" r="8" fill="#15161d" opacity=".5"/>
+  </g>
+  <text x="210" y="396" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" fill="#2b2d42">Realme</text>
+</svg>

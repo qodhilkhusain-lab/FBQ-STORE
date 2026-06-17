@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Admin - FBQ Store</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+
+  <div class="top-header">
+    <div class="container top-header-inner">
+      <span>Panel Admin Khusus</span>
+      <span>Toko pribadi FBQ Store</span>
+      <span>Akses admin terpisah dari homepage</span>
+    </div>
+  </div>
+
+  <header class="main-header admin-main-header">
+    <div class="container header-inner">
+      <a class="logo" href="/panel-admin">
+        <span>Admin</span><strong>.</strong>
+        <small>FBQ</small>
+      </a>
+      <div class="admin-search-note">Panel khusus untuk mengelola dashboard, transaksi, customer, dan produk toko</div>
+      <div class="header-actions">
+        <a href="/" class="header-link"><span class="header-icon">🏠</span><small>Home Toko</small></a>
+        <a href="/katalog.html" class="header-link"><span class="header-icon">📱</span><small>Katalog</small></a>
+        <button class="header-link logout-button" id="logoutAdmin" type="button"><span class="header-icon">↩</span><small>Logout</small></button>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="category-nav" id="navLinks">
+    <div class="container nav-inner">
+      <a href="/panel-admin" class="">Dashboard</a>
+      <a href="/panel-admin/transaksi" class="">Transaksi</a>
+      <a href="/panel-admin/customer" class="active">Customer Pembeli</a>
+      <a href="/panel-admin/produk" class="">Kelola Produk</a>
+      <a href="/">Lihat Toko</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="admin-hero compact-admin-hero" id="customer-pembeli">
+      <div class="container admin-hero-grid">
+        <div>
+          <p class="eyebrow">Halaman customer pembeli</p>
+          <h1>Nama customer yang sudah membeli.</h1>
+          <p>Halaman ini khusus untuk menampilkan data customer dan ringkasan transaksi yang sudah dilakukan di toko.</p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" id="refreshCustomers" type="button">Refresh Customer</button>
+            <a href="/panel-admin/transaksi" class="btn btn-outline">Lihat Transaksi</a>
+          </div>
+        </div>
+        <div class="admin-card-visual">
+          <div class="admin-card-line"></div>
+          <h3>Customer</h3>
+          <p>Nama • Pesanan • Produk</p>
+          <div class="admin-dot-row"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Customer yang Sudah Membeli</h2>
+            <p>Data ini tidak tampil di homepage dan hanya dapat diakses melalui login admin.</p>
+          </div>
+        </div>
+        <div class="table-wrapper">
+          <table class="customer-table">
+            <thead>
+              <tr>
+                <th>Nama Customer</th>
+                <th>Kode Pesanan</th>
+                <th>No. WA</th>
+                <th>Produk Dibeli</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Tanggal</th>
+              </tr>
+            </thead>
+            <tbody id="customerTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-bottom">© 2026 FBQ Store Admin. Halaman admin terpisah dan hanya bisa dibuka melalui login admin.</div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="/admin.js"></script>
+</body>
+</html>

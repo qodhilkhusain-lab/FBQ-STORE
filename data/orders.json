@@ -1,0 +1,40 @@
+[
+  {
+    "id": "ORD-20260609-1001",
+    "customerName": "Nadia Putri",
+    "phoneNumber": "081234567890",
+    "address": "Jl. Merdeka No. 12, Pekalongan",
+    "paymentMethod": "Transfer Bank",
+    "items": [
+      {
+        "productId": 3,
+        "name": "Xiaomi Redmi Note 12 Pro",
+        "price": 3299000,
+        "quantity": 1,
+        "subtotal": 3299000
+      }
+    ],
+    "total": 3299000,
+    "status": "Diproses admin",
+    "createdAt": "2026-06-09T03:20:00.000Z"
+  },
+  {
+    "id": "ORD-20260609-1002",
+    "customerName": "Rafi Maulana",
+    "phoneNumber": "082233445566",
+    "address": "Jl. Anggrek No. 7, Batang",
+    "paymentMethod": "COD",
+    "items": [
+      {
+        "productId": 1,
+        "name": "iPhone 13 128GB",
+        "price": 7200000,
+        "quantity": 1,
+        "subtotal": 7200000
+      }
+    ],
+    "total": 7200000,
+    "status": "Menunggu konfirmasi admin",
+    "createdAt": "2026-06-09T04:00:00.000Z"
+  }
+]

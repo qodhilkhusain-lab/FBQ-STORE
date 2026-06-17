@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 430">
+  <defs>
+    <linearGradient id="screen" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ff4864"/><stop offset="1" stop-color="#d10024"/></linearGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#15161d" flood-opacity=".25"/></filter>
+  </defs>
+  <rect width="520" height="430" fill="transparent"/>
+  <circle cx="390" cy="90" r="82" fill="#d10024" opacity=".1"/>
+  <circle cx="120" cy="340" r="110" fill="#1e1f29" opacity=".08"/>
+  <g filter="url(#s)">
+    <rect x="170" y="40" width="180" height="340" rx="38" fill="#15161d"/>
+    <rect x="185" y="64" width="150" height="292" rx="26" fill="url(#screen)"/>
+    <rect x="226" y="50" width="68" height="8" rx="4" fill="#363845"/>
+    <circle cx="260" cy="342" r="11" fill="#fff" opacity=".8"/>
+    <rect x="206" y="105" width="108" height="15" rx="8" fill="#fff" opacity=".85"/>
+    <rect x="206" y="136" width="82" height="11" rx="6" fill="#fff" opacity=".55"/>
+    <rect x="206" y="280" width="108" height="38" rx="19" fill="#fff" opacity=".9"/>
+  </g>
+  <g opacity=".95">
+    <rect x="62" y="250" width="130" height="84" rx="18" fill="#fff" stroke="#e4e7ee"/>
+    <text x="127" y="284" text-anchor="middle" font-family="Arial" font-size="15" font-weight="800" fill="#d10024">READY</text>
+    <text x="127" y="308" text-anchor="middle" font-family="Arial" font-size="20" font-weight="900" fill="#15161d">STOCK</text>
+  </g>
+</svg>

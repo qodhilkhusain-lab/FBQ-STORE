@@ -1,0 +1,32 @@
+{
+  "name": "fbq-store-admin-panel",
+  "version": "3.0.0",
+  "description": "Web e-commerce toko pribadi jual beli handphone dengan halaman publik terpisah dan panel admin khusus untuk transaksi, customer, dan edit produk.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "e-commerce",
+    "handphone",
+    "expressjs",
+    "javascript",
+    "toko-pribadi",
+    "panel-admin",
+    "edit-produk",
+    "transaksi-customer"
+  ],
+  "author": "Kelompok Web E-Commerce HP",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

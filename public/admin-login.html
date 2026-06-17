@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Admin - FBQ Store</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body login-body">
+  <main class="admin-login-page">
+    <section class="admin-login-card">
+      <a class="logo login-logo" href="/">
+        <span>FBQ</span><strong>.</strong>
+        <small>Store</small>
+      </a>
+      <p class="eyebrow">Panel admin khusus</p>
+      <h1>Login Admin</h1>
+      <p class="login-intro">Halaman admin tidak ditampilkan di homepage. Admin dapat masuk melalui link khusus ini untuk melihat transaksi, customer, dan mengedit data produk toko.</p>
+
+      <form id="adminLoginForm" class="checkout-form login-form">
+        <label>
+          Username Admin
+          <input type="text" id="adminUsername" placeholder="Masukkan username" autocomplete="username" required>
+        </label>
+        <label>
+          Password Admin
+          <input type="password" id="adminPassword" placeholder="Masukkan password" autocomplete="current-password" required>
+        </label>
+        <button class="btn btn-primary" type="submit">Masuk ke Panel Admin</button>
+        <p class="form-message" id="loginMessage"></p>
+      </form>
+
+
+      <a class="back-home-link" href="/">← Kembali ke halaman toko</a>
+    </section>
+  </main>
+
+  <script src="/admin-login.js"></script>
+</body>
+</html>

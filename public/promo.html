@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promo Toko - FBQ Store</title>
+  <link rel="stylesheet" href="/css/user.css">
+</head>
+<body data-page="promo">
+  <div class="top-header">
+    <div class="container top-header-inner">
+      <span>📍 Kudus, Indonesia</span>
+      <span>☎ 8956-3907-1700</span>
+      <span>✉ fbqstore@email.com</span>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="container header-inner">
+      <a class="logo" href="/"><span>FBQ</span><strong>.</strong><small>Store</small></a>
+      <div class="header-search">
+        <select id="quickBrandFilter" aria-label="Filter merek cepat">
+          <option value="all">Semua Merek</option>
+          <option value="Apple">Apple</option>
+          <option value="Samsung">Samsung</option>
+          <option value="Xiaomi">Xiaomi</option>
+          <option value="OPPO">OPPO</option>
+          <option value="Vivo">Vivo</option>
+          <option value="Realme">Realme</option>
+        </select>
+        <input type="text" id="searchInput" placeholder="Cari produk promo...">
+        <button id="searchButton">Cari</button>
+      </div>
+      <div class="header-actions">
+        <a href="/checkout.html" class="header-link"><span class="header-icon cart-badge" id="cartBadge">0</span><small>Keranjang</small></a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+    </div>
+  </header>
+
+  <nav class="category-nav" id="navLinks">
+    <div class="container nav-inner">
+      <a href="/">Beranda</a>
+      <a href="/katalog.html">Katalog HP</a>
+      <a href="/promo.html" class="active">Promo Toko</a>
+      <a href="/checkout.html">Checkout</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hotdeal standalone-hotdeal" id="hotdeal">
+      <div class="container hotdeal-inner">
+        <div class="countdown-box"><span>02</span><small>Hari</small></div>
+        <div class="countdown-box"><span>12</span><small>Jam</small></div>
+        <div class="countdown-box"><span>45</span><small>Menit</small></div>
+        <div class="hotdeal-text">
+          <p class="eyebrow">Promo toko minggu ini</p>
+          <h2>Diskon sampai 15% untuk unit pilihan.</h2>
+          <p>Promo hanya berlaku untuk stok handphone yang tersedia di FBQ Store.</p>
+          <a class="btn btn-primary" href="/katalog.html">Lihat Semua Produk</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section promo-detail-section">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Informasi Promo</h2>
+            <p>Halaman ini khusus menampilkan promo, tidak digabung dengan homepage.</p>
+          </div>
+        </div>
+        <div class="promo-info-grid">
+          <article class="promo-info-card"><strong>Potongan harga</strong><span>Diskon sampai 15% untuk produk berlabel promo.</span></article>
+          <article class="promo-info-card"><strong>Stok terbatas</strong><span>Promo berlaku selama stok toko masih tersedia.</span></article>
+          <article class="promo-info-card"><strong>Checkout langsung</strong><span>Tambahkan produk ke keranjang lalu isi data pembeli.</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <h2>Produk Promo</h2>
+            <p>Produk pilihan yang sedang dipromosikan oleh toko.</p>
+          </div>
+          <div class="mini-stats"><span><strong id="productCount">0</strong> produk</span><span><strong id="stockCount">0</strong> stok</span></div>
+        </div>
+
+        <div class="filter-bar">
+          <select id="brandFilter">
+            <option value="all">Semua merek</option>
+            <option value="Apple">Apple</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Xiaomi">Xiaomi</option>
+            <option value="OPPO">OPPO</option>
+            <option value="Vivo">Vivo</option>
+            <option value="Realme">Realme</option>
+          </select>
+          <select id="conditionFilter">
+            <option value="all">Semua kondisi</option>
+            <option value="Baru">Baru</option>
+            <option value="Bekas">Bekas</option>
+          </select>
+          <select id="sortFilter">
+            <option value="">Urutkan harga</option>
+            <option value="low">Harga termurah</option>
+            <option value="high">Harga termahal</option>
+          </select>
+          <button class="btn btn-light" id="resetFilter">Reset Filter</button>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><h3>FBQ<span>.</span></h3><p>Promo toko handphone pribadi.</p></div>
+      <div><h4>Menu</h4><a href="/">Beranda</a><a href="/katalog.html">Katalog</a><a href="/checkout.html">Checkout</a></div>
+      <div><h4>Catatan</h4><p>Promo hanya berlaku sesuai stok toko.</p></div>
+    </div>
+    <div class="footer-bottom">© 2026 FBQ Store.</div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
