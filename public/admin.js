@@ -267,7 +267,7 @@ function renderProductTable(products) {
       <td><textarea data-product-field="${product.id}:description">${escapeHtml(product.description)}</textarea></td>
       <td class="action-buttons-cell">
         <button class="btn btn-primary small-save-btn" onclick="updateProduct(${product.id})">Simpan</button>
-        ${product.stock <= 0 ? `<button class="btn btn-danger small-delete-btn" onclick="deleteProduct(${product.id})">Hapus</button>` : ''}
+        <button class="btn btn-danger small-delete-btn" onclick="deleteProduct(${product.id})" ${product.stock > 0 ? 'disabled title="Hanya bisa hapus saat stok kosong"' : ''}>Hapus</button>
       </td>
     </tr>
   `).join('');
