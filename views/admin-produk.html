@@ -72,26 +72,21 @@
           </div>
         </div>
         <div class="admin-add-product-card">
-          <div class="admin-card admin-add-product-form">
-            <h3>Tambah Produk Baru</h3>
-            <p>Isi semua informasi produk lengkap, lalu tekan tombol "Tambah Produk" untuk menambahkan ke katalog.</p>
+          <div class="admin-add-product-form">
+            <h3>📱 Tambah Produk Baru</h3>
+            <p>Isi semua informasi produk dengan lengkap, kemudian tekan tombol "Tambah Produk".</p>
             <div class="admin-add-product-grid">
               <div class="form-field">
-                <label for="newProductPhoto">Foto Produk</label>
-                <input id="newProductPhoto" type="file" accept="image/png,image/jpeg,image/webp">
-                <img id="newProductPreview" class="admin-product-photo" alt="Pratinjau foto produk" style="display:none; max-width:140px; margin-top:0.75rem;">
+                <label for="newProductName">Nama Produk <span style="color: #d10024;">*</span></label>
+                <input id="newProductName" type="text" placeholder="Contoh: iPhone 14 128GB" required>
               </div>
               <div class="form-field">
-                <label for="newProductName">Nama Produk</label>
-                <input id="newProductName" type="text" placeholder="Contoh: iPhone 14 128GB">
+                <label for="newProductBrand">Merek <span style="color: #d10024;">*</span></label>
+                <input id="newProductBrand" type="text" placeholder="Contoh: Apple" required>
               </div>
               <div class="form-field">
-                <label for="newProductBrand">Merek</label>
-                <input id="newProductBrand" type="text" placeholder="Contoh: Apple">
-              </div>
-              <div class="form-field">
-                <label for="newProductCondition">Kondisi</label>
-                <input id="newProductCondition" type="text" placeholder="Contoh: Baru / Bekas Mulus">
+                <label for="newProductCondition">Kondisi <span style="color: #d10024;">*</span></label>
+                <input id="newProductCondition" type="text" placeholder="Contoh: Baru / Bekas Mulus" required>
               </div>
               <div class="form-field">
                 <label for="newProductRam">RAM</label>
@@ -110,23 +105,29 @@
                 <input id="newProductBattery" type="text" placeholder="Contoh: 5000 mAh">
               </div>
               <div class="form-field">
-                <label for="newProductPrice">Harga</label>
-                <input id="newProductPrice" type="number" min="0" placeholder="Contoh: 4500000">
+                <label for="newProductPrice">Harga <span style="color: #d10024;">*</span></label>
+                <input id="newProductPrice" type="number" min="0" placeholder="Contoh: 4500000" required>
               </div>
               <div class="form-field">
-                <label for="newProductStock">Stok</label>
-                <input id="newProductStock" type="number" min="0" placeholder="Contoh: 5">
+                <label for="newProductStock">Stok <span style="color: #d10024;">*</span></label>
+                <input id="newProductStock" type="number" min="0" placeholder="Contoh: 5" required>
               </div>
               <div class="form-field">
-                <label for="newProductLabel">Label</label>
+                <label for="newProductLabel">Label / Badge</label>
                 <input id="newProductLabel" type="text" placeholder="Contoh: Best Seller">
               </div>
               <div class="form-field full-width">
-                <label for="newProductDescription">Deskripsi</label>
-                <textarea id="newProductDescription" rows="3" placeholder="Deskripsi singkat produk"></textarea>
+                <label for="newProductDescription">Deskripsi Produk <span style="color: #d10024;">*</span></label>
+                <textarea id="newProductDescription" rows="3" placeholder="Jelaskan fitur, keunggulan, dan kondisi produk..." required></textarea>
+              </div>
+              <div class="form-field full-width">
+                <label for="newProductPhoto">Foto Produk <span style="color: #d10024;">*</span></label>
+                <input id="newProductPhoto" type="file" accept="image/png,image/jpeg,image/webp" required>
+                <img id="newProductPreview" alt="Pratinjau foto produk" style="display:none; max-width:200px; margin-top:0.5rem;">
+                <small style="color: #8d99ae; font-size: 12px; margin-top: 4px;">JPG / PNG / WEBP - Maksimal 3MB</small>
               </div>
             </div>
-            <button class="btn btn-primary" id="addProductButton" type="button">Tambah Produk</button>
+            <button class="btn btn-primary" id="addProductButton" type="button">✓ Tambah Produk</button>
           </div>
         </div>
         <div class="table-wrapper admin-product-wrapper">

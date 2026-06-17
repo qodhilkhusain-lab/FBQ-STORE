@@ -1539,3 +1539,160 @@ textarea {
 .admin-body .feature-card .btn {
   margin-top: 14px;
 }
+
+/* Form Tambah Produk */
+.admin-add-product-card {
+  margin-bottom: 32px;
+}
+
+.admin-add-product-form {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.admin-add-product-form h3 {
+  color: var(--dark);
+  font-size: 24px;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.admin-add-product-form > p {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.admin-add-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  color: var(--dark);
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.form-field input,
+.form-field textarea {
+  min-height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--text);
+  background: var(--white);
+  outline: 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #b4b9c5;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(209, 0, 36, 0.08);
+}
+
+.form-field textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+#newProductPreview {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px;
+  background: #f8fafc;
+  object-fit: contain;
+}
+
+.admin-add-product-form .btn {
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 12px;
+  border: 0;
+  background: var(--red);
+  color: var(--white);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.admin-add-product-form .btn:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+}
+
+.admin-add-product-form .btn:active {
+  transform: translateY(0);
+}
+
+/* Toast Styling */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: var(--dark);
+  color: var(--white);
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .admin-add-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .admin-add-product-form {
+    padding: 20px;
+  }
+
+  .admin-add-product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-add-product-form h3 {
+    font-size: 20px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    min-height: 42px;
+  }
+}
