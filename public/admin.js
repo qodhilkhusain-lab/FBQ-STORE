@@ -257,7 +257,12 @@ function renderProductTable(products) {
       <td><input class="spec-input" data-product-field="${product.id}:camera" value="${escapeHtml(product.camera || '')}" placeholder="Contoh: 50MP OIS"></td>
       <td><input class="spec-input" data-product-field="${product.id}:battery" value="${escapeHtml(product.battery || '')}" placeholder="Contoh: 5000 mAh"></td>
       <td><input type="number" min="0" data-product-field="${product.id}:price" value="${product.price}"></td>
-      <td><input type="number" min="0" data-product-field="${product.id}:stock" value="${product.stock}"></td>
+      <td>
+        <div class="stock-cell">
+          <input type="number" min="0" data-product-field="${product.id}:stock" value="${product.stock}">
+          ${product.stock <= 0 ? '<span class="stock-badge">Habis</span>' : ''}
+        </div>
+      </td>
       <td><input data-product-field="${product.id}:label" value="${escapeHtml(product.label || '')}"></td>
       <td><textarea data-product-field="${product.id}:description">${escapeHtml(product.description)}</textarea></td>
       <td class="action-buttons-cell">
