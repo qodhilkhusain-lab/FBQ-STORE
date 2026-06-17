@@ -260,7 +260,10 @@ function renderProductTable(products) {
       <td><input type="number" min="0" data-product-field="${product.id}:stock" value="${product.stock}"></td>
       <td><input data-product-field="${product.id}:label" value="${escapeHtml(product.label || '')}"></td>
       <td><textarea data-product-field="${product.id}:description">${escapeHtml(product.description)}</textarea></td>
-      <td><button class="btn btn-primary small-save-btn" onclick="updateProduct(${product.id})">Simpan</button></td>
+      <td class="action-buttons-cell">
+        <button class="btn btn-primary small-save-btn" onclick="updateProduct(${product.id})">Simpan</button>
+        ${product.stock <= 0 ? `<button class="btn btn-danger small-delete-btn" onclick="deleteProduct(${product.id})">Hapus</button>` : ''}
+      </td>
     </tr>
   `).join('');
 }
@@ -375,6 +378,28 @@ async function updateProduct(productId) {
 
   showToast(photoFile ? 'Data dan foto produk berhasil diperbarui' : 'Data produk berhasil diperbarui');
   loadProducts();
+}
+
+async function deleteProduct(productId) {
+  const confirmed = window.confirm('Hapus produk ini? Produk hanya dapat dihapus jika stok sudah kosong.');
+  if (!confirmed) return;
+
+  try {
+    const response = await adminFetch(`/api/admin/products/${productId}`, {
+      method: 'DELETE'
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+      showToast(result.message || 'Gagal menghapus produk');
+      return;
+    }
+
+    showToast(result.message || 'Produk berhasil dihapus');
+    loadProducts();
+  } catch (error) {
+    if (error.message !== 'Unauthorized') showToast('Gagal menghapus produk');
+  }
 }
 
 async function logout() {

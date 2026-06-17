@@ -318,6 +318,36 @@ app.get('/api/admin/products', requireAdmin, (req, res) => {
   res.json(readJson(productsFile));
 });
 
+app.delete('/api/admin/products/:id', requireAdmin, (req, res) => {
+  const products = readJson(productsFile);
+  const productIndex = products.findIndex((item) => item.id === Number(req.params.id));
+
+  if (productIndex === -1) {
+    return res.status(404).json({ message: 'Produk tidak ditemukan' });
+  }
+
+  const product = products[productIndex];
+  if (Number(product.stock) > 0) {
+    return res.status(400).json({ message: 'Produk hanya dapat dihapus jika stok sudah kosong' });
+  }
+
+  if (product.image) {
+    const imagePath = path.join(publicPath, product.image);
+    if (fs.existsSync(imagePath)) {
+      try {
+        fs.unlinkSync(imagePath);
+      } catch (error) {
+        console.error('Gagal menghapus file gambar produk:', error.message);
+      }
+    }
+  }
+
+  products.splice(productIndex, 1);
+  writeJson(productsFile, products);
+
+  res.json({ message: 'Produk berhasil dihapus' });
+});
+
 app.post('/api/admin/products', requireAdmin, (req, res) => {
   const {
     name,

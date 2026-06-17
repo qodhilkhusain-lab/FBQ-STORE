@@ -295,6 +295,16 @@ textarea {
   border: 2px solid var(--red);
 }
 
+.btn-danger {
+  background: transparent;
+  color: var(--red);
+  border: 2px solid var(--red);
+}
+
+.btn-danger:hover {
+  background: rgba(209, 0, 36, 0.1);
+}
+
 .btn-light {
   background: var(--white);
   color: var(--text);
@@ -1482,6 +1492,19 @@ textarea {
 .small-save-btn {
   padding: 10px 14px;
   white-space: nowrap;
+}
+
+.small-delete-btn {
+  padding: 10px 14px;
+  white-space: nowrap;
+  margin-top: 8px;
+  border-radius: 10px;
+}
+
+.action-buttons-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .admin-product-wrapper {
