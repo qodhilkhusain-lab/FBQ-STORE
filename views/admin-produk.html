@@ -71,6 +71,64 @@
             <p>Admin bisa mengganti foto produk dan mengedit spesifikasi HP seperti RAM, memori, kamera, dan baterai. Tekan tombol simpan agar perubahan tampil di katalog.</p>
           </div>
         </div>
+        <div class="admin-add-product-card">
+          <div class="admin-card admin-add-product-form">
+            <h3>Tambah Produk Baru</h3>
+            <p>Isi semua informasi produk lengkap, lalu tekan tombol "Tambah Produk" untuk menambahkan ke katalog.</p>
+            <div class="admin-add-product-grid">
+              <div class="form-field">
+                <label for="newProductPhoto">Foto Produk</label>
+                <input id="newProductPhoto" type="file" accept="image/png,image/jpeg,image/webp">
+                <img id="newProductPreview" class="admin-product-photo" alt="Pratinjau foto produk" style="display:none; max-width:140px; margin-top:0.75rem;">
+              </div>
+              <div class="form-field">
+                <label for="newProductName">Nama Produk</label>
+                <input id="newProductName" type="text" placeholder="Contoh: iPhone 14 128GB">
+              </div>
+              <div class="form-field">
+                <label for="newProductBrand">Merek</label>
+                <input id="newProductBrand" type="text" placeholder="Contoh: Apple">
+              </div>
+              <div class="form-field">
+                <label for="newProductCondition">Kondisi</label>
+                <input id="newProductCondition" type="text" placeholder="Contoh: Baru / Bekas Mulus">
+              </div>
+              <div class="form-field">
+                <label for="newProductRam">RAM</label>
+                <input id="newProductRam" type="text" placeholder="Contoh: 8GB">
+              </div>
+              <div class="form-field">
+                <label for="newProductStorage">Memori</label>
+                <input id="newProductStorage" type="text" placeholder="Contoh: 256GB">
+              </div>
+              <div class="form-field">
+                <label for="newProductCamera">Kamera</label>
+                <input id="newProductCamera" type="text" placeholder="Contoh: 50MP OIS">
+              </div>
+              <div class="form-field">
+                <label for="newProductBattery">Baterai</label>
+                <input id="newProductBattery" type="text" placeholder="Contoh: 5000 mAh">
+              </div>
+              <div class="form-field">
+                <label for="newProductPrice">Harga</label>
+                <input id="newProductPrice" type="number" min="0" placeholder="Contoh: 4500000">
+              </div>
+              <div class="form-field">
+                <label for="newProductStock">Stok</label>
+                <input id="newProductStock" type="number" min="0" placeholder="Contoh: 5">
+              </div>
+              <div class="form-field">
+                <label for="newProductLabel">Label</label>
+                <input id="newProductLabel" type="text" placeholder="Contoh: Best Seller">
+              </div>
+              <div class="form-field full-width">
+                <label for="newProductDescription">Deskripsi</label>
+                <textarea id="newProductDescription" rows="3" placeholder="Deskripsi singkat produk"></textarea>
+              </div>
+            </div>
+            <button class="btn btn-primary" id="addProductButton" type="button">Tambah Produk</button>
+          </div>
+        </div>
         <div class="table-wrapper admin-product-wrapper">
           <table class="customer-table product-admin-table">
             <thead>

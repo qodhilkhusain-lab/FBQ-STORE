@@ -318,6 +318,66 @@ app.get('/api/admin/products', requireAdmin, (req, res) => {
   res.json(readJson(productsFile));
 });
 
+app.post('/api/admin/products', requireAdmin, (req, res) => {
+  const {
+    name,
+    brand,
+    condition,
+    description,
+    price,
+    stock,
+    label,
+    ram,
+    storage,
+    camera,
+    battery,
+    imageData
+  } = req.body;
+
+  if (!name || !brand || !condition || !description || !imageData) {
+    return res.status(400).json({ message: 'Nama, merek, kondisi, deskripsi, dan foto produk wajib diisi' });
+  }
+
+  const numericPrice = Number(price);
+  const numericStock = Number(stock);
+
+  if (Number.isNaN(numericPrice) || numericPrice < 0 || Number.isNaN(numericStock) || numericStock < 0) {
+    return res.status(400).json({ message: 'Harga dan stok harus berupa angka positif' });
+  }
+
+  const products = readJson(productsFile);
+  const nextId = products.reduce((max, item) => Math.max(max, Number(item.id) || 0), 0) + 1;
+
+  const newProduct = {
+    id: nextId,
+    name: String(name).trim(),
+    brand: String(brand).trim(),
+    condition: String(condition).trim(),
+    price: numericPrice,
+    stock: numericStock,
+    storage: String(storage || '').trim(),
+    ram: String(ram || '').trim(),
+    camera: String(camera || '').trim(),
+    battery: String(battery || '').trim(),
+    description: String(description).trim(),
+    label: String(label || '').trim(),
+    image: '',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  };
+
+  try {
+    newProduct.image = saveProductImage(newProduct.id, imageData);
+  } catch (error) {
+    return res.status(error.statusCode || 500).json({ message: error.message || 'Gagal menyimpan foto produk' });
+  }
+
+  products.push(newProduct);
+  writeJson(productsFile, products);
+
+  res.status(201).json({ message: 'Produk baru berhasil ditambahkan', product: newProduct });
+});
+
 app.patch('/api/admin/products/:id', requireAdmin, (req, res) => {
   const products = readJson(productsFile);
   const product = products.find((item) => item.id === Number(req.params.id));

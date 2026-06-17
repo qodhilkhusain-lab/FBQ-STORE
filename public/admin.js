@@ -12,6 +12,20 @@ const adminRevenue = document.getElementById('adminRevenue');
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 const toast = document.getElementById('toast');
+const addProductButton = document.getElementById('addProductButton');
+const newProductPhoto = document.getElementById('newProductPhoto');
+const newProductPreview = document.getElementById('newProductPreview');
+const newProductName = document.getElementById('newProductName');
+const newProductBrand = document.getElementById('newProductBrand');
+const newProductCondition = document.getElementById('newProductCondition');
+const newProductRam = document.getElementById('newProductRam');
+const newProductStorage = document.getElementById('newProductStorage');
+const newProductCamera = document.getElementById('newProductCamera');
+const newProductBattery = document.getElementById('newProductBattery');
+const newProductPrice = document.getElementById('newProductPrice');
+const newProductStock = document.getElementById('newProductStock');
+const newProductLabel = document.getElementById('newProductLabel');
+const newProductDescription = document.getElementById('newProductDescription');
 
 const rupiah = (value) => new Intl.NumberFormat('id-ID', {
   style: 'currency',
@@ -41,6 +55,103 @@ function readFileAsDataUrl(file) {
     reader.onerror = () => reject(new Error('Gagal membaca foto produk'));
     reader.readAsDataURL(file);
   });
+}
+
+function updateNewProductPreview() {
+  if (!newProductPhoto || !newProductPreview) return;
+  const file = newProductPhoto.files?.[0];
+  if (!file) {
+    newProductPreview.style.display = 'none';
+    newProductPreview.src = '';
+    return;
+  }
+  newProductPreview.src = URL.createObjectURL(file);
+  newProductPreview.style.display = 'block';
+}
+
+function resetNewProductForm() {
+  if (newProductPhoto) newProductPhoto.value = '';
+  if (newProductPreview) {
+    newProductPreview.src = '';
+    newProductPreview.style.display = 'none';
+  }
+  if (newProductName) newProductName.value = '';
+  if (newProductBrand) newProductBrand.value = '';
+  if (newProductCondition) newProductCondition.value = '';
+  if (newProductRam) newProductRam.value = '';
+  if (newProductStorage) newProductStorage.value = '';
+  if (newProductCamera) newProductCamera.value = '';
+  if (newProductBattery) newProductBattery.value = '';
+  if (newProductPrice) newProductPrice.value = '';
+  if (newProductStock) newProductStock.value = '';
+  if (newProductLabel) newProductLabel.value = '';
+  if (newProductDescription) newProductDescription.value = '';
+}
+
+async function addProduct() {
+  if (!newProductPhoto || !newProductName || !newProductBrand || !newProductCondition || !newProductPrice || !newProductStock || !newProductDescription) return;
+
+  const photoFile = newProductPhoto.files?.[0];
+  if (!photoFile) {
+    showToast('Pilih foto produk terlebih dahulu');
+    return;
+  }
+
+  const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+  if (!allowedTypes.includes(photoFile.type)) {
+    showToast('Foto harus JPG, PNG, atau WEBP');
+    return;
+  }
+
+  if (photoFile.size > 3 * 1024 * 1024) {
+    showToast('Ukuran foto maksimal 3MB');
+    return;
+  }
+
+  const payload = {
+    name: newProductName.value.trim(),
+    brand: newProductBrand.value.trim(),
+    condition: newProductCondition.value.trim(),
+    ram: newProductRam.value.trim(),
+    storage: newProductStorage.value.trim(),
+    camera: newProductCamera.value.trim(),
+    battery: newProductBattery.value.trim(),
+    label: newProductLabel.value.trim(),
+    description: newProductDescription.value.trim(),
+    price: Number(newProductPrice.value),
+    stock: Number(newProductStock.value),
+    imageData: await readFileAsDataUrl(photoFile)
+  };
+
+  if (!payload.name || !payload.brand || !payload.condition || !payload.description) {
+    showToast('Nama, merek, kondisi, dan deskripsi wajib diisi');
+    return;
+  }
+
+  if (Number.isNaN(payload.price) || payload.price < 0 || Number.isNaN(payload.stock) || payload.stock < 0) {
+    showToast('Harga dan stok harus angka positif');
+    return;
+  }
+
+  try {
+    const response = await adminFetch('/api/admin/products', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+      showToast(result.message || 'Gagal menambahkan produk');
+      return;
+    }
+
+    showToast(result.message || 'Produk baru berhasil ditambahkan');
+    resetNewProductForm();
+    loadProducts();
+  } catch (error) {
+    if (error.message !== 'Unauthorized') showToast('Gagal menambahkan produk');
+  }
 }
 
 function showToast(message) {
@@ -287,6 +398,8 @@ if (productTableBody) {
     if (preview) preview.src = URL.createObjectURL(input.files[0]);
   });
 }
+if (newProductPhoto) newProductPhoto.addEventListener('change', updateNewProductPreview);
+if (addProductButton) addProductButton.addEventListener('click', addProduct);
 if (logoutAdmin) logoutAdmin.addEventListener('click', logout);
 if (menuToggle && navLinks) menuToggle.addEventListener('click', () => navLinks.querySelector('.nav-inner')?.classList.toggle('active'));
 if (navLinks) navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => navLinks.querySelector('.nav-inner')?.classList.remove('active')));
