@@ -8,9 +8,9 @@ FBQ Store adalah web e-commerce toko pribadi untuk jual beli handphone. Tampilan
 ### 3. Fadhil Abrar Faiq (202451146)
 
 ## Pembagian Jobdesk
-# 1. M.Boby Ramadhani (202451134)
+## 1. M.Boby Ramadhani (202451134)
 Backend & Datebase Developer `server.js, package.json, .gitignore, data/products.json, data/orders.json`
-# 2. Ahmad Qodhil Khusain (202451140)
+## 2. Ahmad Qodhil Khusain (202451140)
 
 Admin Panel Developer (admin) dan Deploy `admin-login.html, views/admin.html, css/admin.css, admin-login.js, admin.js`
 Buka link admin tersendiri melalui:
@@ -37,7 +37,7 @@ Fitur admin:
 - Menambahkan Data produk toko
 - Tombol logout admin.
 
-# 3. Fadhil Abrar Faiq (202451146)
+## 3. Fadhil Abrar Faiq (202451146)
 Frontend UI/UX Developer (user) `indek.html, katalog.html, promo.html, checkout.html, css/user.css, app.js`
 ## Perubahan Terbaru
 
