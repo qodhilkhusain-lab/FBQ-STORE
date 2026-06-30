@@ -3,9 +3,9 @@
 FBQ Store adalah web e-commerce toko pribadi untuk jual beli handphone. Tampilan dibuat mengikuti gaya template **Electro** dengan halaman publik yang dipisah: home, katalog, promo, dan checkout. Halaman admin tidak ditampilkan pada homepage atau navigasi publik.
 
 ## Kelompok 15 :
-# 1. Ahmad Qodhil Khusain (202451140)
-# 2. M.Boby Ramadhani (202451134) 
-# 3. Fadhil Abrar Faiq (202451146)
+### 1. Ahmad Qodhil Khusain (202451140)
+### 2. M.Boby Ramadhani (202451134) 
+### 3. Fadhil Abrar Faiq (202451146)
 
 ## Pembagian Jobdesk
 # 1. M.Boby Ramadhani (202451134)
