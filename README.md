@@ -39,7 +39,7 @@ Fitur admin:
 
 ## 3. Fadhil Abrar Faiq (202451146)
 Frontend UI/UX Developer (user) `indek.html, katalog.html, promo.html, checkout.html, css/user.css, app.js`
-## Perubahan Terbaru
+# Perubahan Terbaru
 
 Admin sekarang dibuat melalui **panel admin khusus**. Link admin tidak ditampilkan di homepage, katalog, promo, atau checkout. Admin masuk melalui URL khusus dan login terlebih dahulu.
 
