@@ -52,7 +52,11 @@ Admin sekarang dibuat melalui **panel admin khusus**. Link admin tidak ditampilk
 | Login Admin | `public/admin-login.html` | Form login admin khusus |
 | Panel Admin | `/panel-admin` + `views/admin.html` | Dashboard, transaksi, customer, status pesanan, dan edit produk |
 
-## Fitur Utama
+
+
+
+
+# Fitur Utama FBQ Store
 
 ### Halaman Home
 
